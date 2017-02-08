@@ -40,6 +40,7 @@ public:
     void printActiveUniforms(GLuint programHandle);
     void printActiveAttribs(GLuint programHandle);
     virtual void rotateModel(float bX, float bY, float bZ, float dX, float dY, float dZ, float phi);
+     void SceneBasic::setLookAt(vec3 eye, vec4 direction);
 };
 
 #endif // SCENEBASIC_H

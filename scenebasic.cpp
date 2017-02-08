@@ -285,5 +285,36 @@ void SceneBasic::printActiveAttribs(GLuint programHandle) {
 
  void SceneBasic::rotateModel(float bX, float bY, float bZ, float dX, float dY, float dZ, float phi)
 {
- glm::vec4 Mat4;
+ //Definicion of needed rotation matrices and vectors
+ glm::mat4 matrixTranslation1;
+ glm::mat4 matrixTranslation2;
+ glm::mat4 matrixRotation;
+ glm::vec3 bVector1(bX, bY, bZ);
+ glm::vec3 bVector2(-bX, -bY, -bZ);
+ glm::vec3 dVector(dX, dY, dZ);
+ dVector = glm::normalize(dVector);
+
+ //Variable to store result of M2translation * Mrotation * M1translation
+ mat4 model;
+
+ //Performing M1translation
+ matrixTranslation1 = glm::translate(glm::mat4(1.f),bVector1 );
+
+ //Performing M2translation
+ matrixTranslation2 = glm::translate(glm::mat4(1.f), bVector2);
+
+ //Matrix of rotation Mrotation
+ matrixRotation = glm::rotate((float) (phi*PI / 180), dVector);
+
+ //Calculating M2translation * Mrotation * M1translation
+model = matrixTranslation2 * matrixRotation * matrixTranslation1;
+
+ //Settiing variavle and storing result of M2translation * Mrotation * M1translation
+ this->model = this->model * model;
 }
+
+ void SceneBasic::setLookAt(vec3 eye, vec4 direction)
+ {
+     //What
+     this->view = glm::lookAt(vec3(eye.x, eye.y, eye.z), vec3(eye.x+direction.x, eye.y+direction.y, eye.z+direction.z), vec3(0.0f,1.0f, 0.0f));
+ }
