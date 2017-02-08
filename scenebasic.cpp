@@ -285,5 +285,5 @@ void SceneBasic::printActiveAttribs(GLuint programHandle) {
 
  void SceneBasic::rotateModel(float bX, float bY, float bZ, float dX, float dY, float dZ, float phi)
 {
-
+ glm::vec4 Mat4;
 }
