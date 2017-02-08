@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include "mainview.h"
+#include "linedialog.h"
+#include "rotationdialog.h"
+#include "resetdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,15 +21,28 @@ public:
     ~MainWindow();
 
 private slots:
+    void onPositionChange();
+    void onRotationChange();
+    void resetModel();
+
     void on_actionRot_45_about_y_triggered();
 
     void on_actionRot_45_about_x_triggered();
 
     void on_actionRot_45_about_z_triggered();
 
+    void on_actionLine_rotation_triggered();
+
+    void on_actionPosition_triggered();
+
+    void on_actionReset_triggered();
+
 private:
     Ui::MainWindow *ui;
     MainView* view;
+    LineDialog *lDialog;
+    RotationDialog *rDialog;
+    ResetDialog *resetDialog;
 };
 
 #endif // MAINWINDOW_H

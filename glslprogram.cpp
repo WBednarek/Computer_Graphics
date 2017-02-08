@@ -72,7 +72,7 @@ GLuint GLSLProgram::createShader(GLenum shaderType)
    glGetShaderInfoLog.*/
 void GLSLProgram::compileShader(GLuint shader)
 {
-	glCompileShader(shader);
+    glCompileShader(shader);
 }
 
 
@@ -117,9 +117,9 @@ void GLSLProgram::compileShader(GLuint shader)
    When a shader object is created, its information log will be a string of length 0.*/
 
 void GLSLProgram::checkCompileStatus(GLuint shader)
-{	
+{
     GLint result;
-	glGetShaderiv( shader, GL_COMPILE_STATUS, &result);
+    glGetShaderiv( shader, GL_COMPILE_STATUS, &result);
     if( GL_FALSE == result )
     {
 
@@ -139,7 +139,7 @@ void GLSLProgram::checkCompileStatus(GLuint shader)
 
            free(log);
        }
-	}
+    }
 }
 
 

@@ -28,7 +28,10 @@ SOURCES += main.cpp\
     glslprogram.cpp \
     glutils.cpp \
     mainview.cpp \
-    scenebasic.cpp
+    scenebasic.cpp \
+    linedialog.cpp \
+    resetdialog.cpp \
+    rotationdialog.cpp
 
 HEADERS  += mainwindow.h \
     glslprogram.h \
@@ -36,11 +39,28 @@ HEADERS  += mainwindow.h \
     mainview.h \
     scene.h \
     scenebasic.h \
+    linedialog.h \
+    resetdialog.h \
+    rotationdialog.h \
+    ui_rotationdialog.h \
+    ui_resetdialog.h \
     ui_mainwindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    linedialog.ui \
+    resetdialog.ui \
+    rotationdialog.ui \
+    rotationdialog.ui \
+    resetdialog.ui \
+    linedialog.ui
 
 win32: LIBS += -L$$PWD/./ -lglew32 -lopengl32 -lglu32
 
 INCLUDEPATH += $$PWD/.
 DEPENDPATH += $$PWD/.
+
+DISTFILES += \
+    shader/scenebasic.dat \
+    shader/scenebasic2.dat \
+    shader/basic.frag \
+    shader/basic.vert

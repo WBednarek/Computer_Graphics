@@ -14,9 +14,24 @@ MainView::MainView(const QGLFormat & format, QWidget *parent) : QGLWidget(format
 
     timer = new QTimer(this);
     connect( timer, SIGNAL(timeout()), this, SLOT(timerUpdate()) );
-    //timer->start(50);
+   // timer->start(50);
 
     this->setMinimumSize(800,600);
+}
+
+void MainView::resetModel()
+{
+    this->scene->defaultDisplay();
+}
+
+void MainView::rotateModel(float bX, float bY, float bZ, float dX, float dY, float dZ, float phi)
+{
+    this->scene->rotateModel(bX, bY, bZ, dX, dY, dZ, phi);
+}
+
+void MainView::changePosition(glm::vec3 eye, glm::vec3 direction)
+{
+    this->scene->setLookAt(eye, direction);
 }
 
 void MainView::initializeGL() {
@@ -80,6 +95,6 @@ void MainView::timerUpdate() {
  {
     // angle = ang;
      //axis = vec3(x,y,z);
-     scene->setAngleAxis(ang,vec3(x,y,z));
+     //scene->setAngleAxis(ang,vec3(x,y,z));
      updateGL();
  }

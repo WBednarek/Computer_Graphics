@@ -27,12 +27,9 @@ public:
       Called when screen is resized
       */
     virtual void resize(int, int) = 0;
+    virtual void defaultDisplay() = 0;
 
-    virtual void setAngleAxis(float angle, vec3 axis) = 0;
-
-    //Implementing two methods according to "Hints for implementation..." insctuctions
-
-    //virtual void updateView(float eX, float eY, float eZ, float directX, float directY, float directZ) = 0;
+    virtual void setLookAt(vec3 eye, vec3 direction) = 0;
     virtual void rotateModel(float bX, float bY, float bZ, float dX, float dY, float dZ, float phi) = 0;
 };
 
