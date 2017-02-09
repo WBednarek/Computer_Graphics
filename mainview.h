@@ -20,9 +20,9 @@ private:
 
 public:
     MainView( const QGLFormat & format, QWidget *parent = 0 );
-    void resetModel();
+    void defaultDisplay();
     void rotateModel(float bX, float bY, float bZ, float dX, float dY, float dZ, float phi);
-    void changePosition(vec3 eye, vec3 direction);
+    void setLookAt(vec3 eye, vec3 direction);
     void setRotAxis(float ang, float x, float y , float z);
 protected:
     void initializeGL();

@@ -26,7 +26,7 @@ private:
     mat4 projection;
 
     void readData(const char* fname);
-    void CreateVBO( GLuint * vaoHandle, float positionData[], float colorData[] );
+    void CreateVBO( GLuint * vaoHandle, float positionData[], float colorData[], int newSize );
 
     float positionData[108];
     float colorData[108];

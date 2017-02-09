@@ -15,9 +15,6 @@ MainWindow::MainWindow(QWidget *parent) :
     auto button2 = rDialog->getButton();
     connect(button2, SIGNAL(accepted()), this, SLOT(onRotationChange()));
 
-    resetDialog = new ResetDialog(this);
-    auto button3 = resetDialog->getButton();
-    connect(button3, SIGNAL(accepted()), this, SLOT(resetModel()));
 }
 
 
@@ -36,7 +33,7 @@ void MainWindow::onPositionChange()
 {
     auto eyes = this->lDialog->getEye();
     auto direction = this->lDialog->getDirection();
-    this->view->changePosition(eyes, direction);
+    this->view->setLookAt(eyes, direction);
 }
 
 void MainWindow::onRotationChange()
@@ -48,11 +45,7 @@ void MainWindow::onRotationChange()
     this->view->rotateModel(b.x, b.y, b.z, d.x, d.y, d.z, phi);
 }
 
-void MainWindow::resetModel()
-{
-    this->view->changePosition(vec3(0,0,2), vec3(0,0,-1));
-    this->view->resetModel();
-}
+
 
 void MainWindow::on_actionRot_45_about_y_triggered()
 {
@@ -81,5 +74,6 @@ void MainWindow::on_actionPosition_triggered()
 
 void MainWindow::on_actionReset_triggered()
 {
-    resetDialog->show();
+    this->view->setLookAt(vec3(0,0,2), vec3(0,0,-1));
+    this->view->defaultDisplay();
 }

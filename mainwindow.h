@@ -5,7 +5,6 @@
 #include "mainview.h"
 #include "linedialog.h"
 #include "rotationdialog.h"
-#include "resetdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,7 +22,7 @@ public:
 private slots:
     void onPositionChange();
     void onRotationChange();
-    void resetModel();
+
 
     void on_actionRot_45_about_y_triggered();
 
@@ -42,7 +41,7 @@ private:
     MainView* view;
     LineDialog *lDialog;
     RotationDialog *rDialog;
-    ResetDialog *resetDialog;
+
 };
 
 #endif // MAINWINDOW_H

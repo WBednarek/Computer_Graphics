@@ -21,9 +21,24 @@ SceneBasic::SceneBasic() : isObjectRotated(false)
 {
     readData("shader/scenebasic2.dat");
 
+    axisData[0] = -2.0;
+        axisData[1] = -2.0;
+     axisData[2] = -2.0;
+     axisData[3] = 2.0;
+    axisData[4] = 2.0;
+    axisData[5] = 2.0;
 
-    std::cout<<"Displaying"<<std::endl;
+    axisColData[0] = 0.2;
+    axisColData[1] = 0.7;
+    axisColData[2] = 30;
+    axisColData[3] = 30;
+    axisColData[4] = 30;
+    axisColData[5] = 30;
+
+   // std::cout<<"D linePositionData[0] = -2.0;
 }
+
+
 
 bool SceneBasic::getIsObjectRotated() const
 {
@@ -49,7 +64,7 @@ void SceneBasic::readData(const char* fname)
     }
 }
 
-void SceneBasic::CreateVBO( GLuint * vaoHandle, float pos[], float colorData[] )
+void SceneBasic::CreateVBO( GLuint * vaoHandle, float pos[], float colorData[], int newSize )
 {
     // Create and populate the buffer objects
     GLuint vboHandles[2];
@@ -61,12 +76,12 @@ void SceneBasic::CreateVBO( GLuint * vaoHandle, float pos[], float colorData[] )
     // bind positionBufferHandle to GL_ARRAY_BUFFER buffer object target
     glBindBuffer(GL_ARRAY_BUFFER, positionBufferHandle);
     // creates and initializes GL_ARRAY_BUFFER buffer object's data store
-    glBufferData(GL_ARRAY_BUFFER, 108 * sizeof(float), pos, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, newSize * sizeof(float), pos, GL_STATIC_DRAW);
 
 
      // bind colorBufferHandle to GL_ARRAY_BUFFER target
     glBindBuffer(GL_ARRAY_BUFFER, colorBufferHandle);
-    glBufferData(GL_ARRAY_BUFFER, 108 * sizeof(float), colorData, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, newSize * sizeof(float), colorData, GL_STATIC_DRAW);
 
     // Create and set-up the vertex array object
     glGenVertexArrays( 1, vaoHandle );
@@ -178,10 +193,10 @@ void SceneBasic::initScene()
     prog.link();
 
     // create and populate the vertex buffer opbject
-    CreateVBO( &vaoHandle, positionData, colorData );
+    CreateVBO( &vaoHandle, positionData, colorData, 108 );
 
     //  create and populate the vertex buffer opbject for line object
-    CreateVBO( &axisVaoHandle, axisData, axisColData );
+    CreateVBO( &axisVaoHandle, axisData, axisColData, 6 );
 
     prog.printActiveUniforms();
 
@@ -249,11 +264,12 @@ void SceneBasic::render()
 
     if ( getIsObjectRotated() == true )
     {
-        CreateVBO( &axisVaoHandle, axisData, axisColData );
+        //size axis is 6
+        CreateVBO( &axisVaoHandle, axisData, axisColData, 6 );
         glBindVertexArray(axisVaoHandle);
 
-        prog.setUniform("ModelView", view);
-        prog.setUniform("Projection", projection * view);
+        prog.setUniform("ModelViewMatrix", view);
+        prog.setUniform("MVP", projection * view);
 
         glDrawArrays(GL_LINES, 0, 2);
     }
@@ -362,5 +378,5 @@ axisData[5] = bZ+dZ;
 
 void SceneBasic::defaultDisplay()
 {
-    this->model = mat4(2.0f);
+    this->model = mat4(1.0f);
 }

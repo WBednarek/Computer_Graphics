@@ -30,7 +30,6 @@ SOURCES += main.cpp\
     mainview.cpp \
     scenebasic.cpp \
     linedialog.cpp \
-    resetdialog.cpp \
     rotationdialog.cpp
 
 HEADERS  += mainwindow.h \
@@ -40,7 +39,6 @@ HEADERS  += mainwindow.h \
     scene.h \
     scenebasic.h \
     linedialog.h \
-    resetdialog.h \
     rotationdialog.h \
     ui_rotationdialog.h \
     ui_resetdialog.h \
@@ -48,10 +46,8 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     linedialog.ui \
-    resetdialog.ui \
     rotationdialog.ui \
     rotationdialog.ui \
-    resetdialog.ui \
     linedialog.ui
 
 win32: LIBS += -L$$PWD/./ -lglew32 -lopengl32 -lglu32

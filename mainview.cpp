@@ -19,17 +19,19 @@ MainView::MainView(const QGLFormat & format, QWidget *parent) : QGLWidget(format
     this->setMinimumSize(800,600);
 }
 
-void MainView::resetModel()
+void MainView::defaultDisplay()
 {
     this->scene->defaultDisplay();
+    updateGL();
 }
 
 void MainView::rotateModel(float bX, float bY, float bZ, float dX, float dY, float dZ, float phi)
 {
     this->scene->rotateModel(bX, bY, bZ, dX, dY, dZ, phi);
+    updateGL();
 }
 
-void MainView::changePosition(glm::vec3 eye, glm::vec3 direction)
+void MainView::setLookAt(glm::vec3 eye, glm::vec3 direction)
 {
     this->scene->setLookAt(eye, direction);
 }
