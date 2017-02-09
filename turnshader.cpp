@@ -1,24 +1,24 @@
-#include "rotationdialog.h"
-#include "ui_rotationdialog.h"
+#include "turnshader.h"
+#include "ui_turnshader.h"
 
-QDialogButtonBox *RotationDialog::getButton()
+QDialogButtonBox *TurnObjectWindow::getButton()
 {
     return this->ui->buttonBox;
 }
 
-RotationDialog::RotationDialog(QWidget *parent) :
+TurnObjectWindow::TurnObjectWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::RotationDialog)
+    ui(new Ui::TurnObjectWindow)
 {
     ui->setupUi(this);
 }
 
-RotationDialog::~RotationDialog()
+TurnObjectWindow::~TurnObjectWindow()
 {
     delete ui;
 }
 
-glm::vec3 RotationDialog::getB()
+glm::vec3 TurnObjectWindow::getB()
 {
     auto xB = this->ui->xB->value();
     auto yB = this->ui->yB->value();
@@ -26,7 +26,7 @@ glm::vec3 RotationDialog::getB()
     return vec3(xB, yB, zB);
 }
 
-glm::vec3 RotationDialog::getD()
+glm::vec3 TurnObjectWindow::getD()
 {
     auto xD = this->ui->xD->value();
     auto yD = this->ui->yD->value();
@@ -34,7 +34,7 @@ glm::vec3 RotationDialog::getD()
     return vec3(xD, yD, zD);
 }
 
-float RotationDialog::getPhi()
+float TurnObjectWindow::getPhi()
 {
     return this->ui->phi->value();
 }

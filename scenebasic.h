@@ -6,6 +6,13 @@
 #include "glslprogram.h"
 #include "C:/glm/glm/glm.hpp"
 #include <vector>
+#include <time.h>
+#include <cstdlib>
+#include <ctime>
+#include <conio.h>
+#include <windows.h>
+#include <chrono>
+#include <random>
 using glm::mat4;
 
 class SceneBasic : public Scene
@@ -30,15 +37,16 @@ private:
 
     float positionData[108];
     float colorData[108];
-    float axisData[100];
+    float axisData[10];
     std::vector<float> axisData0;
-    float axisColData[100];
+    float axisColData[10];
     const double PI = 4.0*atan(1.0);
 public:
     void setLookAt(vec3 eye, vec3 direction);
     void rotateModel(float bX, float bY, float bZ, float dX, float dY, float dZ, float phi);
     void defaultDisplay();
     void setAxis(float bX, float bY, float bZ, float dX, float dY, float dZ);
+    void initializeSet();
 
 
     SceneBasic();
@@ -52,6 +60,7 @@ public:
     void printActiveAttribs(GLuint programHandle);
     bool getIsObjectRotated() const;
     void setIsObjectRotated(bool value);
+    void newLineColor();
 };
 
 #endif // SCENEBASIC_H

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>LineDialog</class>
- <widget class="QDialog" name="LineDialog">
+ <class>SetLineWindow</class>
+ <widget class="QDialog" name="SetLineWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,8 +16,8 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>20</y>
+     <x>180</x>
+     <y>220</y>
      <width>161</width>
      <height>31</height>
     </rect>
@@ -172,26 +172,13 @@
     <string>Z</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>30</y>
-     <width>251</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>rgreg</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>LineDialog</receiver>
+   <receiver>SetLineWindow</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -207,7 +194,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>LineDialog</receiver>
+   <receiver>SetLineWindow</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

@@ -36,6 +36,12 @@ void MainView::setLookAt(glm::vec3 eye, glm::vec3 direction)
     this->scene->setLookAt(eye, direction);
 }
 
+void MainView::newLineColor()
+{
+    this->scene->newLineColor();
+    updateGL();
+}
+
 void MainView::initializeGL() {
 
     //////////////// PLUG IN SCENE HERE /////////////////

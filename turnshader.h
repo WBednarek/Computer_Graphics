@@ -1,5 +1,5 @@
-#ifndef ROTATIONDIALOG_H
-#define ROTATIONDIALOG_H
+#ifndef TURNOBJECTWINDOW_H
+#define TURNOBJECTWINDOW_H
 
 #include "C:/glew-1.13.0/include/GL/glew.h"
 #include "glslprogram.h"
@@ -8,22 +8,22 @@
 #include <QDialogButtonBox>
 
 namespace Ui {
-class RotationDialog;
+class TurnObjectWindow;
 }
 
-class RotationDialog : public QDialog
+class TurnObjectWindow : public QDialog
 {
     Q_OBJECT
 
 public:
     QDialogButtonBox * getButton();
-    explicit RotationDialog(QWidget *parent = 0);
-    ~RotationDialog();
+    explicit TurnObjectWindow(QWidget *parent = 0);
+    ~TurnObjectWindow();
     vec3 getB();
     vec3 getD();
     float getPhi();
 private:
-    Ui::RotationDialog *ui;
+    Ui::TurnObjectWindow *ui;
 };
 
-#endif // ROTATIONDIALOG_H
+#endif // TURNOBJECTWINDOW_H

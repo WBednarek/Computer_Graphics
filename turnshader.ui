@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>RotationDialog</class>
- <widget class="QDialog" name="RotationDialog">
+ <class>TurnObjectWindow</class>
+ <widget class="QDialog" name="TurnObjectWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -208,7 +208,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>gergerg</string>
+    <string>Angle</string>
    </property>
   </widget>
  </widget>
@@ -217,7 +217,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>RotationDialog</receiver>
+   <receiver>TurnObjectWindow</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -233,7 +233,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>RotationDialog</receiver>
+   <receiver>TurnObjectWindow</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">

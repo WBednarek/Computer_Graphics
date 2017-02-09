@@ -1,24 +1,24 @@
-#include "linedialog.h"
-#include "ui_linedialog.h"
+#include "setline.h"
+#include "ui_setline.h"
 
-QDialogButtonBox *LineDialog::getButton()
+QDialogButtonBox *SetLineWindow::getButton()
 {
     return this->ui->buttonBox;
 }
 
-LineDialog::LineDialog(QWidget *parent) :
+SetLineWindow::SetLineWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::LineDialog)
+    ui(new Ui::SetLineWindow)
 {
     ui->setupUi(this);
 }
 
-LineDialog::~LineDialog()
+SetLineWindow::~SetLineWindow()
 {
     delete ui;
 }
 
-glm::vec3 LineDialog::getEye()
+glm::vec3 SetLineWindow::getEye()
 {
     auto xEye = this->ui->xEye->value();
     auto yEye = this->ui->yEye->value();
@@ -26,7 +26,7 @@ glm::vec3 LineDialog::getEye()
     return vec3(xEye, yEye, zEye);
 }
 
-glm::vec3 LineDialog::getDirection()
+glm::vec3 SetLineWindow::getDirection()
 {
     auto xDirection = this->ui->xDirection->value();
     auto yDirection = this->ui->yDirection->value();
@@ -34,7 +34,7 @@ glm::vec3 LineDialog::getDirection()
     return vec3(xDirection, yDirection, zDirection);
 }
 
-void LineDialog::on_buttonBox_accepted()
+void SetLineWindow::on_buttonBox_accepted()
 {
 
 }

@@ -24,6 +24,7 @@ public:
     void rotateModel(float bX, float bY, float bZ, float dX, float dY, float dZ, float phi);
     void setLookAt(vec3 eye, vec3 direction);
     void setRotAxis(float ang, float x, float y , float z);
+    void newLineColor();
 protected:
     void initializeGL();
     void paintGL();

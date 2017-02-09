@@ -21,24 +21,8 @@ SceneBasic::SceneBasic() : isObjectRotated(false)
 {
     readData("shader/scenebasic2.dat");
 
-    axisData[0] = -2.0;
-        axisData[1] = -2.0;
-     axisData[2] = -2.0;
-     axisData[3] = 2.0;
-    axisData[4] = 2.0;
-    axisData[5] = 2.0;
-
-    axisColData[0] = 0.2;
-    axisColData[1] = 0.7;
-    axisColData[2] = 30;
-    axisColData[3] = 30;
-    axisColData[4] = 30;
-    axisColData[5] = 30;
-
-   // std::cout<<"D linePositionData[0] = -2.0;
+    initializeSet();
 }
-
-
 
 bool SceneBasic::getIsObjectRotated() const
 {
@@ -50,13 +34,29 @@ void SceneBasic::setIsObjectRotated(bool value)
     isObjectRotated = value;
 }
 
+void SceneBasic::initializeSet()
+{
+    srand(time(NULL));
+    float initialPosition = rand() % 8;
+    std::cout<<"Random number is: "<<initialPosition<<" number of loop iteration: "
+             <<sizeof(axisData) / sizeof(axisData[0])<<std::endl;
+
+    for (int i = 0; i < sizeof(axisData) / sizeof(axisData[0]); ++i)
+    {
+         axisData[i] = initialPosition;
+         axisColData[i] = 1;
+    }
+
+}
+
+
 void SceneBasic::readData(const char* fname)
 {
     ifstream ifs(fname);
 
     if (!ifs) {
         std::cout << "data file not found\n";
-        std::cout << "Current path is: "<<ifs.get()<<std::endl;
+        std::cout << "Communicate: "<<ifs.get()<<std::endl;
         exit(1);
     } else {
         for (int i=0; i<108; i++) ifs >> positionData[i];
@@ -379,4 +379,22 @@ axisData[5] = bZ+dZ;
 void SceneBasic::defaultDisplay()
 {
     this->model = mat4(1.0f);
+}
+
+void SceneBasic::newLineColor()
+{
+    //Modern way of generating random numbers
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::default_random_engine dre(seed);
+    std::uniform_real_distribution<float> gen(0, 1);
+
+    //srand(time(NULL));
+    // float newColor =  ((float) rand() / (RAND_MAX));
+
+    for (int i = 0; i < sizeof(axisData) / sizeof(axisData[0]); ++i)
+    {
+         float newColor = gen(dre);
+         axisColData[i] = newColor;
+    }
+
 }

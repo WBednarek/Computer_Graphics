@@ -29,8 +29,8 @@ SOURCES += main.cpp\
     glutils.cpp \
     mainview.cpp \
     scenebasic.cpp \
-    linedialog.cpp \
-    rotationdialog.cpp
+    setline.cpp \
+    turnshader.cpp
 
 HEADERS  += mainwindow.h \
     glslprogram.h \
@@ -38,17 +38,15 @@ HEADERS  += mainwindow.h \
     mainview.h \
     scene.h \
     scenebasic.h \
-    linedialog.h \
-    rotationdialog.h \
-    ui_rotationdialog.h \
+    ui_turnobjectwindow.h \
     ui_resetdialog.h \
-    ui_mainwindow.h
+    ui_mainwindow.h \
+    setline.h \
+    turnshader.h
 
 FORMS    += mainwindow.ui \
-    linedialog.ui \
-    rotationdialog.ui \
-    rotationdialog.ui \
-    linedialog.ui
+    turnshader.ui \
+    setline.ui
 
 win32: LIBS += -L$$PWD/./ -lglew32 -lopengl32 -lglu32
 

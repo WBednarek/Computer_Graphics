@@ -1,5 +1,5 @@
-#ifndef LINEDIALOG_H
-#define LINEDIALOG_H
+#ifndef SETLINEWINDOW_H
+#define SETLINEWINDOW_H
 
 #include "C:/glew-1.13.0/include/GL/glew.h"
 #include "glslprogram.h"
@@ -9,17 +9,17 @@
 using glm::vec3;
 
 namespace Ui {
-class LineDialog;
+class SetLineWindow;
 }
 
-class LineDialog : public QDialog
+class SetLineWindow : public QDialog
 {
     Q_OBJECT
 
 public:
     QDialogButtonBox * getButton();
-    explicit LineDialog(QWidget *parent = 0);
-    ~LineDialog();
+    explicit SetLineWindow(QWidget *parent = 0);
+    ~SetLineWindow();
     vec3 getEye();
     vec3 getDirection();
 private slots:
@@ -27,7 +27,7 @@ private slots:
     void on_buttonBox_accepted();
 
 private:
-    Ui::LineDialog *ui;
+    Ui::SetLineWindow *ui;
 };
 
-#endif // LINEDIALOG_H
+#endif // SETLINEWINDOW_H

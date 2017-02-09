@@ -3,8 +3,8 @@
 
 #include <QMainWindow>
 #include "mainview.h"
-#include "linedialog.h"
-#include "rotationdialog.h"
+#include "setline.h"
+#include "turnshader.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,24 +23,19 @@ private slots:
     void onPositionChange();
     void onRotationChange();
 
-
-    void on_actionRot_45_about_y_triggered();
-
-    void on_actionRot_45_about_x_triggered();
-
-    void on_actionRot_45_about_z_triggered();
-
     void on_actionLine_rotation_triggered();
 
     void on_actionPosition_triggered();
 
     void on_actionReset_triggered();
 
+    void on_actionChange_color_triggered();
+
 private:
     Ui::MainWindow *ui;
     MainView* view;
-    LineDialog *lDialog;
-    RotationDialog *rDialog;
+    SetLineWindow *lineWindow;
+    TurnObjectWindow *rotationWindow;
 
 };
 
