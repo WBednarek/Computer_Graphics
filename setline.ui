@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>388</width>
+    <height>217</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>220</y>
+     <x>200</x>
+     <y>180</y>
      <width>161</width>
      <height>31</height>
     </rect>
@@ -29,11 +29,11 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="xEye">
+  <widget class="QDoubleSpinBox" name="eyeX">
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>110</y>
+     <y>40</y>
      <width>62</width>
      <height>22</height>
     </rect>
@@ -42,37 +42,11 @@
     <double>-100.000000000000000</double>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="yEye">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>110</y>
-     <width>62</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <double>-100.000000000000000</double>
-   </property>
-  </widget>
-  <widget class="QDoubleSpinBox" name="zEye">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>110</y>
-     <width>62</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="minimum">
-    <double>-100.000000000000000</double>
-   </property>
-  </widget>
-  <widget class="QDoubleSpinBox" name="xDirection">
+  <widget class="QDoubleSpinBox" name="eyeY">
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>150</y>
+     <y>80</y>
      <width>62</width>
      <height>22</height>
     </rect>
@@ -81,11 +55,11 @@
     <double>-100.000000000000000</double>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="yDirection">
+  <widget class="QDoubleSpinBox" name="eyeZ">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>150</y>
+     <x>100</x>
+     <y>120</y>
      <width>62</width>
      <height>22</height>
     </rect>
@@ -94,11 +68,11 @@
     <double>-100.000000000000000</double>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="zDirection">
+  <widget class="QDoubleSpinBox" name="dirX">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>150</y>
+     <x>230</x>
+     <y>40</y>
      <width>62</width>
      <height>22</height>
     </rect>
@@ -107,65 +81,91 @@
     <double>-100.000000000000000</double>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QDoubleSpinBox" name="dirY">
    <property name="geometry">
     <rect>
-     <x>16</x>
-     <y>110</y>
+     <x>230</x>
+     <y>80</y>
+     <width>62</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <double>-100.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="dirZ">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>120</y>
+     <width>62</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <double>-100.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QLabel" name="EyePos">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>10</y>
      <width>81</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>E_POS</string>
+    <string>Eye</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="DirectPos">
    <property name="geometry">
     <rect>
-     <x>6</x>
-     <y>150</y>
+     <x>240</x>
+     <y>10</y>
      <width>91</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>DIRECT POSITION</string>
+    <string>Direction</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="x">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>80</y>
-     <width>47</width>
-     <height>13</height>
+     <x>70</x>
+     <y>40</y>
+     <width>16</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
     <string>X</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="y">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>70</x>
      <y>80</y>
-     <width>47</width>
-     <height>13</height>
+     <width>20</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string>Y</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="z">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>80</y>
-     <width>6</width>
-     <height>13</height>
+     <x>70</x>
+     <y>120</y>
+     <width>16</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">

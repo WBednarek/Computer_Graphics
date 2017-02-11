@@ -17,21 +17,22 @@ SetLineWindow::~SetLineWindow()
 {
     delete ui;
 }
-
-glm::vec3 SetLineWindow::getEye()
+//Get eye position
+vec3 SetLineWindow::getPositionOfEye()
 {
-    auto xEye = this->ui->xEye->value();
-    auto yEye = this->ui->yEye->value();
-    auto zEye = this->ui->zEye->value();
-    return vec3(xEye, yEye, zEye);
+    auto eyeX = this->ui->eyeX->value();
+    auto eyeY = this->ui->eyeY->value();
+    auto eyeZ = this->ui->eyeZ->value();
+    return vec3(eyeX, eyeY, eyeZ);
 }
 
-glm::vec3 SetLineWindow::getDirection()
+//Get current direction
+vec3 SetLineWindow::getCurrDirect()
 {
-    auto xDirection = this->ui->xDirection->value();
-    auto yDirection = this->ui->yDirection->value();
-    auto zDirection = this->ui->zDirection->value();
-    return vec3(xDirection, yDirection, zDirection);
+    auto dirX = this->ui->dirX->value();
+    auto dirY = this->ui->dirY->value();
+    auto dirZ = this->ui->dirZ->value();
+    return vec3(dirX, dirY, dirZ);
 }
 
 void SetLineWindow::on_buttonBox_accepted()

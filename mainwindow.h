@@ -5,6 +5,9 @@
 #include "mainview.h"
 #include "setline.h"
 #include "turnshader.h"
+#include <chrono>
+#include <random>
+#include <iostream>
 
 namespace Ui {
 class MainWindow;
@@ -30,6 +33,8 @@ private slots:
     void on_actionReset_triggered();
 
     void on_actionChange_color_triggered();
+
+    void on_actionRandom_position_triggered();
 
 private:
     Ui::MainWindow *ui;

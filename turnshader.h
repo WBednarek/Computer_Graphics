@@ -16,12 +16,15 @@ class TurnObjectWindow : public QDialog
     Q_OBJECT
 
 public:
+    ~TurnObjectWindow();
     QDialogButtonBox * getButton();
     explicit TurnObjectWindow(QWidget *parent = 0);
-    ~TurnObjectWindow();
-    vec3 getB();
-    vec3 getD();
-    float getPhi();
+    //Get X, Y, Z of B
+    vec3 getX_Y_Z_ValuesOf_B();
+    //Get X, Y, Z of D
+    vec3 getX_Y_Z_ValuesOf_D();
+    //Get Phi value
+    float getValueOfPhi();
 private:
     Ui::TurnObjectWindow *ui;
 };

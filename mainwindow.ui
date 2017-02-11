@@ -27,8 +27,12 @@
    <addaction name="separator"/>
    <addaction name="actionPosition"/>
    <addaction name="separator"/>
-   <addaction name="actionReset"/>
    <addaction name="actionChange_color"/>
+   <addaction name="separator"/>
+   <addaction name="actionRandom_position"/>
+   <addaction name="separator"/>
+   <addaction name="actionReset"/>
+   <addaction name="separator"/>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -39,34 +43,20 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuRotation">
-    <property name="title">
-     <string>Rotation</string>
-    </property>
-    <addaction name="separator"/>
-    <addaction name="separator"/>
-   </widget>
-   <widget class="QMenu" name="menu8">
-    <property name="title">
-     <string>8</string>
-    </property>
-   </widget>
-   <addaction name="menuRotation"/>
-   <addaction name="menu8"/>
   </widget>
   <action name="actionLine_rotation">
    <property name="text">
-    <string>Position</string>
+    <string>Set object position</string>
    </property>
   </action>
   <action name="actionPosition">
    <property name="text">
-    <string>Line rotation</string>
+    <string>Set line of rotation</string>
    </property>
   </action>
   <action name="actionReset">
    <property name="text">
-    <string>Reset</string>
+    <string>Default position</string>
    </property>
   </action>
   <action name="actionChange_color">
@@ -76,6 +66,11 @@
    <property name="toolTip">
     <string>Change
  line color</string>
+   </property>
+  </action>
+  <action name="actionRandom_position">
+   <property name="text">
+    <string>Random position</string>
    </property>
   </action>
  </widget>

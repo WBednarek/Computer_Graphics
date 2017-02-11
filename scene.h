@@ -31,6 +31,7 @@ public:
 
     virtual void setLookAt(vec3 eye, vec3 direction) = 0;
     virtual void rotateModel(float bX, float bY, float bZ, float dX, float dY, float dZ, float phi) = 0;
+    //Function
     virtual void newLineColor() = 0;
 };
 

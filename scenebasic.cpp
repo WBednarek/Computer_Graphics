@@ -34,12 +34,11 @@ void SceneBasic::setIsObjectRotated(bool value)
     isObjectRotated = value;
 }
 
+//Initializing some position and default line color is white
 void SceneBasic::initializeSet()
 {
     srand(time(NULL));
     float initialPosition = rand() % 8;
-    std::cout<<"Random number is: "<<initialPosition<<" number of loop iteration: "
-             <<sizeof(axisData) / sizeof(axisData[0])<<std::endl;
 
     for (int i = 0; i < sizeof(axisData) / sizeof(axisData[0]); ++i)
     {
@@ -195,7 +194,7 @@ void SceneBasic::initScene()
     // create and populate the vertex buffer opbject
     CreateVBO( &vaoHandle, positionData, colorData, 108 );
 
-    //  create and populate the vertex buffer opbject for line object
+    // create and populate the vertex buffer opbject - line
     CreateVBO( &axisVaoHandle, axisData, axisColData, 6 );
 
     prog.printActiveUniforms();
@@ -252,7 +251,7 @@ void SceneBasic::render()
        0 specifies the starting index in the enabled arrays.
        36 specifies the number of indices to be rendered. */
 
-    // bind the vertex array object
+    // Binding vertex array object
     glBindVertexArray(vaoHandle);
 
     // set matrices
@@ -264,7 +263,7 @@ void SceneBasic::render()
 
     if ( getIsObjectRotated() == true )
     {
-        //size axis is 6
+        //size of axis is 6
         CreateVBO( &axisVaoHandle, axisData, axisColData, 6 );
         glBindVertexArray(axisVaoHandle);
 
@@ -376,13 +375,17 @@ axisData[4] = bY+dY;
 axisData[5] = bZ+dZ;
 }
 
+  //default position of object
 void SceneBasic::defaultDisplay()
 {
+
     this->model = mat4(1.0f);
 }
 
+//Chose line color
 void SceneBasic::newLineColor()
 {
+    float newColor;
     //Modern way of generating random numbers
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     std::default_random_engine dre(seed);
@@ -393,7 +396,7 @@ void SceneBasic::newLineColor()
 
     for (int i = 0; i < sizeof(axisData) / sizeof(axisData[0]); ++i)
     {
-         float newColor = gen(dre);
+         newColor = gen(dre);
          axisColData[i] = newColor;
     }
 

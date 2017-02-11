@@ -20,8 +20,10 @@ public:
     QDialogButtonBox * getButton();
     explicit SetLineWindow(QWidget *parent = 0);
     ~SetLineWindow();
-    vec3 getEye();
-    vec3 getDirection();
+    //Get eye position
+    vec3 getPositionOfEye();
+    //Get current direction
+    vec3 getCurrDirect();
 private slots:
 
     void on_buttonBox_accepted();

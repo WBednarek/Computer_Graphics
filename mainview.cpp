@@ -34,6 +34,7 @@ void MainView::rotateModel(float bX, float bY, float bZ, float dX, float dY, flo
 void MainView::setLookAt(glm::vec3 eye, glm::vec3 direction)
 {
     this->scene->setLookAt(eye, direction);
+    updateGL();
 }
 
 void MainView::newLineColor()
@@ -41,6 +42,8 @@ void MainView::newLineColor()
     this->scene->newLineColor();
     updateGL();
 }
+
+
 
 void MainView::initializeGL() {
 

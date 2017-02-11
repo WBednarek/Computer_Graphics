@@ -17,24 +17,25 @@ TurnObjectWindow::~TurnObjectWindow()
 {
     delete ui;
 }
-
-glm::vec3 TurnObjectWindow::getB()
+//Get X, Y, Z of B
+vec3 TurnObjectWindow::getX_Y_Z_ValuesOf_B()
 {
-    auto xB = this->ui->xB->value();
-    auto yB = this->ui->yB->value();
-    auto zB = this->ui->zB->value();
-    return vec3(xB, yB, zB);
+    auto xValOfB = this->ui->xB->value();
+    auto yValOfB = this->ui->yB->value();
+    auto zValOfB = this->ui->zB->value();
+    return vec3(xValOfB, yValOfB, zValOfB);
+}
+//Get X, Y, Z of D
+vec3 TurnObjectWindow::getX_Y_Z_ValuesOf_D()
+{
+    auto xValOfD = this->ui->xD->value();
+    auto yValOfD = this->ui->yD->value();
+    auto zValOfD = this->ui->zD->value();
+    return vec3(xValOfD, yValOfD, zValOfD);
 }
 
-glm::vec3 TurnObjectWindow::getD()
-{
-    auto xD = this->ui->xD->value();
-    auto yD = this->ui->yD->value();
-    auto zD = this->ui->zD->value();
-    return vec3(xD, yD, zD);
-}
-
-float TurnObjectWindow::getPhi()
+//Get Phi value
+float TurnObjectWindow::getValueOfPhi()
 {
     return this->ui->phi->value();
 }
